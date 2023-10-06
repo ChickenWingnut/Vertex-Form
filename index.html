@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4 col-lg-2">
+                <nav id="FormNav" class="h-100 flex-column align-items-stretch pe-4 border-end">
+                    <nav class="nav nav-pills flex-column sticky-top">
+                      <a class="nav-link rounded" href="#FoodSecurity">Food Securty</a>
+                      <a class="nav-link rounded" href="#HouseSecurity">House Security</a>
+                      <a class="nav-link rounded" href="#Transportation">Transportation</a>
+                      <a class="nav-link rounded" href="#InterpersonalSafety">Interpersonal Safety</a>
+                      <a class="nav-link rounded" href="#Suicide">Suicide</a>
+                      <a class="nav-link rounded" href="#Depression">Depression</a>
+                      <a class="nav-link rounded" href="#Stress">Stress</a>
+                      <a class="nav-link rounded" href="#SubstanceUse">Substance Use</a>
+                  </nav>
+            </div>
+            <div class="col-9">
+                <div data-bs-spy="scroll" data-bs-target="#FormNav" data-bs-smooth-scroll="true" class="" tabindex="0">
+                    <h4>
+                    Introduction: There are programs to help people with needs that can affect their health, but they aren’t reaching everyone who may need them. Are there things you need help with?
+                    </h4>
+                    <hr>
+                    <form action="/" method="post">
+                    <input name="command" type="hidden" value="computeRiskScores"/>
+                        <div class="mb-3">
+                            <label class="form-label">
+                            Patient Name
+                            </label>
+                            <div class="form-check form-check-reverse form-check-inline">
+                                <input id="inlineRadioDefault1" name="name" type="text"/>
+                            </div>
+                        </div>
+                        <!-- Food Security (0-3; 1: medium risk, 2: high risk, 3: imminent risk) -->
+                        <div id="FoodSecurity" class="mb-5">
+                        <h4>Food Security</h4>
+                        <div class="mb-3">
+                            <label class="form-label">
+                            1. Do you have food for tonight? (Y/N)
+                            </label>
+                            <div class="form-check form-check-reverse form-check-inline">
+                            <input class="form-check-input" id="inlineRadioDefault1" name="question1" type="radio" value="Yes"/>
+                            <label class="form-check-label" for="inlineRadioDefault1">
+                            Yes
+                            </label>
+                            </div>
+                            <div class="form-check form-check-reverse form-check-inline">
+                            <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question1" type="radio" value="No"/>
+                            <label class="form-check-label" for="inlineRadioDefault2">
+                            No
+                            </label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">
+                            2. Within the past 12 months, did you worry that your food would run out before you got money to buy more? (Y/N)
+                            </label>
+                            <div class="form-check form-check-reverse form-check-inline">
+                            <input class="form-check-input" id="inlineRadioDefault1" name="question2" type="radio" value="Yes"/>
+                            <label class="form-check-label" for="inlineRadioDefault1">
+                            Yes
+                            </label>
+                            </div>
+                            <div class="form-check form-check-reverse form-check-inline">
+                            <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question2" type="radio" value="No"/>
+                            <label class="form-check-label" for="inlineRadioDefault2">
+                            No
+                            </label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">
+                            3. Within the past 12 months, did the food you bought just not last and you didn’t have money to get more? (Y/N)
+                            </label>
+                            <div class="form-check form-check-reverse form-check-inline">
+                            <input class="form-check-input" id="inlineRadioDefault1" name="question3" type="radio" value="Yes"/>
+                            <label class="form-check-label" for="inlineRadioDefault1">
+                            Yes
+                            </label>
+                            </div>
+                            <div class="form-check form-check-reverse form-check-inline">
+                            <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question3" type="radio" value="No"/>
+                            <label class="form-check-label" for="inlineRadioDefault2">
+                            No
+                            </label>
+                            </div>
+                        </div>
+                        </div>
+                        <!-- Housing Security/Utilities (0-4; 1: medium risk, 2: high risk, 4: imminent risk) -->
+                        <div id="HouseSecurity" class="mb-5">
+                            <h4>House Security</h4>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                4. Do you have somewhere safe to sleep tonight? (Y/N)
+                                </label>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault1" name="question4" type="radio" value="Yes"/>
+                                <label class="form-check-label" for="inlineRadioDefault1">
+                                Yes
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question4" type="radio" value="No"/>
+                                <label class="form-check-label" for="inlineRadioDefault2">
+                                No
+                                </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                5. Do you have housing? (Y/N)
+                                </label>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault1" name="question5" type="radio" value="Yes"/>
+                                <label class="form-check-label" for="inlineRadioDefault1">
+                                Yes
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question5" type="radio" value="No"/>
+                                <label class="form-check-label" for="inlineRadioDefault2">
+                                No
+                                </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                6. Are you worried about losing your housing? (Y/N)
+                                </label>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault1" name="question6" type="radio" value="Yes"/>
+                                <label class="form-check-label" for="inlineRadioDefault1">
+                                Yes
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question6" type="radio" value="No"/>
+                                <label class="form-check-label" for="inlineRadioDefault2">
+                                No
+                                </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                7. Within the past 12 months, have you or your family members you live with been unable to get utilities (heat, electricity) when it was really needed? (Y/N)
+                                </label>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault1" name="question7" type="radio" value="Yes"/>
+                                <label class="form-check-label" for="inlineRadioDefault1">
+                                Yes
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question7" type="radio" value="No"/>
+                                <label class="form-check-label" for="inlineRadioDefault2">
+                                No
+                                </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Transportation (0-2; 1: medium risk, 2: imminent risk) -->
+                        <div id="Transportation" class="mb-5">
+                            <div class="mb-3">
+                                <label class="form-label">
+                                8. Are your currently able to access reliable transportation to receive needed care (e.g. transportation to medical appointments, pharmacies for medications, other needed services)? (Y/N)
+                                </label>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault1" name="question8" type="radio" value="Yes"/>
+                                <label class="form-check-label" for="inlineRadioDefault1">
+                                Yes
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question8" type="radio" value="No"/>
+                                <label class="form-check-label" for="inlineRadioDefault2">
+                                No
+                                </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                9. Within the past 12 months, has lack of transportation kept you from medical appointments, getting your medicines, non-medical meetings or appointments, work, or from getting things that you need? (Y/N)
+                                </label>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault1" name="question9" type="radio" value="Yes"/>
+                                <label class="form-check-label" for="inlineRadioDefault1">
+                                Yes
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question9" type="radio" value="No"/>
+                                <label class="form-check-label" for="inlineRadioDefault2">
+                                No
+                                </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Interpersonal Safety (0-4; 1: medium risk, 2: high risk, 4: imminent risk) -->
+                        <div id="InterpersonalSafety" class="mb-5">
+                            <h4>Interpersonal Safety</h4>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                10. Do you feel physically and emotionally safe where you currently live? (Y/N)
+                                </label>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault1" name="question10" type="radio" value="Yes"/>
+                                <label class="form-check-label" for="inlineRadioDefault1">
+                                Yes
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question10" type="radio" value="No"/>
+                                <label class="form-check-label" for="inlineRadioDefault2">
+                                No
+                                </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                11. Within the past 12 months, have you been hit, slapped, kicked or otherwise physically hurt by someone? (Y/N)
+                                </label>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault1" name="question11" type="radio" value="Yes"/>
+                                <label class="form-check-label" for="inlineRadioDefault1">
+                                Yes
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question11" type="radio" value="No"/>
+                                <label class="form-check-label" for="inlineRadioDefault2">
+                                No
+                                </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                12. Within the past 12 months, have you been humiliated or emotionally abused in other ways by your partner or ex-partner? (Y/N)
+                                </label>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault1" name="question12" type="radio" value="Yes"/>
+                                <label class="form-check-label" for="inlineRadioDefault1">
+                                Yes
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question12" type="radio" value="No"/>
+                                <label class="form-check-label" for="inlineRadioDefault2">
+                                No
+                                </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!---- TRAUMA INFORMED SCREENINGS ---->
+                        <!-- Suicide (1-5; 1: high risk, 5: imminent risk) -->
+                        <div id="Suicide" class="mb-5">
+                            <h4>Suicide</h4>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                13. Are you having thoughts of killing yourself right now? (Y/N)
+                                </label>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault1" name="question13" type="radio" value="Yes"/>
+                                <label class="form-check-label" for="inlineRadioDefault1">
+                                Yes
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question13" type="radio" value="No"/>
+                                <label class="form-check-label" for="inlineRadioDefault2">
+                                No
+                                </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                14. In the past few weeks, have you wished you were dead? (Y/N)
+                                </label>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault1" name="question14" type="radio" value="Yes"/>
+                                <label class="form-check-label" for="inlineRadioDefault1">
+                                Yes
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question14" type="radio" value="No"/>
+                                <label class="form-check-label" for="inlineRadioDefault2">
+                                No
+                                </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                15. In the past few weeks, have you felt that you or your family would be better off if you were dead? (Y/N)
+                                </label>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault1" name="question15" type="radio" value="Yes"/>
+                                <label class="form-check-label" for="inlineRadioDefault1">
+                                Yes
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question15" type="radio" value="No"/>
+                                <label class="form-check-label" for="inlineRadioDefault2">
+                                No
+                                </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                16. In the past week, have you been having thoughts about killing yourself? (Y/N)
+                                </label>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault1" name="question16" type="radio" value="Yes"/>
+                                <label class="form-check-label" for="inlineRadioDefault1">
+                                Yes
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question16" type="radio" value="No"/>
+                                <label class="form-check-label" for="inlineRadioDefault2">
+                                No
+                                </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                17. Have you ever tried to kill yourself? (Y/N)
+                                </label>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault1" name="question17" type="radio" value="Yes"/>
+                                <label class="form-check-label" for="inlineRadioDefault1">
+                                Yes
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question17" type="radio" value="No"/>
+                                <label class="form-check-label" for="inlineRadioDefault2">
+                                No
+                                </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Depression (after adding 18a and 18b together, 3 or more: high risk) -->
+                        <!-- Intro: Over the last 2 weeks, how often have you been bothered by
+                                    the following problems? -->
+                        <div id="Depression">
+                            <h4>Depression</h4>
+                            <h6 class="lead fst-italic">Intro: Over the last 2 weeks, how often have you been bothered by
+                                the following problems?</h6>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                18a. Little interest or pleasure in doing things?
+                                </label>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault1" name="question18" type="radio" value="Not at all"/>
+                                <label class="form-check-label" for="inlineRadioDefault1">
+                                Not at all
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question18" type="radio" value="Several days"/>
+                                <label class="form-check-label" for="inlineRadioDefault2">
+                                Several days
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault3" name="question18" type="radio" value="More than half the days"/>
+                                <label class="form-check-label" for="inlineRadioDefault3">
+                                More than half the days
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault4" name="question18" type="radio" value="Nearly every day"/>
+                                <label class="form-check-label" for="inlineRadioDefault4">
+                                Nearly every day
+                                </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                18b. Feeling down, depressed, or hopeless?
+                                </label>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault1" name="question19" type="radio" value="Not at all"/>
+                                <label class="form-check-label" for="inlineRadioDefault1">
+                                Not at all
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question19" type="radio" value="Several days"/>
+                                <label class="form-check-label" for="inlineRadioDefault2">
+                                Several days
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault3" name="question19" type="radio" value="More than half the days"/>
+                                <label class="form-check-label" for="inlineRadioDefault3">
+                                More than half the days
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault4" name="question19" type="radio" value="Nearly every day"/>
+                                <label class="form-check-label" for="inlineRadioDefault4">
+                                Nearly every day
+                                </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Stress/Emotional Health (0-4; 2: medium risk, 3: high risk, 4: imminent risk) -->
+                        <div id="Stress">
+                            <h4>Stress</h4>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                19. Stress means a situation in which a person feels tense, restless, nervous, or anxious, or is unable to sleep at night because his or her mind is troubled all the time. Do you feel this kind of stress these days?
+                                </label>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault1" name="question20" type="radio" value="Not at all"/>
+                                <label class="form-check-label" for="inlineRadioDefault1">
+                                Not at all
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question20" type="radio" value="A little bit"/>
+                                <label class="form-check-label" for="inlineRadioDefault2">
+                                A little bit
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault3" name="question20" type="radio" value="Somewhat"/>
+                                <label class="form-check-label" for="inlineRadioDefault3">
+                                Somewhat
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault4" name="question20" type="radio" value="Quite a bit"/>
+                                <label class="form-check-label" for="inlineRadioDefault4">
+                                Quite a bit
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault5" name="question20" type="radio" value="Very much"/>
+                                <label class="form-check-label" for="inlineRadioDefault5">
+                                Very much
+                                </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Substance Use (0-4; 2: medium risk; 3: high risk; 4: imminent risk) -->
+                        <!-- Intro: The next questions relate to your experience with alcohol,
+                                    cigarettes, and other drugs. Some of the substances are prescribed by a
+                                    doctor (like pain medications), but only count those if you have taken
+                                    them for reasons or in doses other than prescribed. One question is about
+                                    illicit or illegal drug use, but we only ask in order to identify community
+                                    services that may be available to help you. -->
+                        <div id="SubstanceUse">
+                            <h4>Substance Use</h4>
+                            <h6 class="lead fst-italic">The next questions relate to your experience with alcohol,
+                                cigarettes, and other drugs. Some of the substances are prescribed by a
+                                doctor (like pain medications), but only count those if you have taken
+                                them for reasons or in doses other than prescribed. One question is about
+                                illicit or illegal drug use, but we only ask in order to identify community
+                                services that may be available to help you.</h6>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                20a. How many times in the past 12 months have you had 5 or more drinks in a day (males) or 4 or more drinks in a day (females)? One drink is 12 ounces of beer, 5 ounces of wine, or 1.5 ounces of 80-proof spirits.
+                                </label>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault1" name="question21" type="radio" value="Never"/>
+                                <label class="form-check-label" for="inlineRadioDefault1">
+                                Never
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question21" type="radio" value="Once or Twice"/>
+                                <label class="form-check-label" for="inlineRadioDefault2">
+                                Once or Twice
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault3" name="question21" type="radio" value="Monthly"/>
+                                <label class="form-check-label" for="inlineRadioDefault3">
+                                Monthly
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault4" name="question21" type="radio" value="Weekly"/>
+                                <label class="form-check-label" for="inlineRadioDefault4">
+                                Weekly
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault5" name="question21" type="radio" value="Daily or Almost Daily"/>
+                                <label class="form-check-label" for="inlineRadioDefault5">
+                                Daily or Almost Daily
+                                </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                20b. How many times in the past 12 months have you used prescription drugs for non-medical reasons?
+                                </label>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault1" name="question22" type="radio" value="Never"/>
+                                <label class="form-check-label" for="inlineRadioDefault1">
+                                Never
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question22" type="radio" value="Once or Twice"/>
+                                <label class="form-check-label" for="inlineRadioDefault2">
+                                Once or Twice
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault3" name="question22" type="radio" value="Monthly"/>
+                                <label class="form-check-label" for="inlineRadioDefault3">
+                                Monthly
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault4" name="question22" type="radio" value="Weekly"/>
+                                <label class="form-check-label" for="inlineRadioDefault4">
+                                Weekly
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault5" name="question22" type="radio" value="Daily or Almost Daily"/>
+                                <label class="form-check-label" for="inlineRadioDefault5">
+                                Daily or Almost Daily
+                                </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                20c. How many times in the past 12 months have you used illegal drugs?
+                                </label>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault1" name="question23" type="radio" value="Never"/>
+                                <label class="form-check-label" for="inlineRadioDefault1">
+                                Never
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question23" type="radio" value="Once or Twice"/>
+                                <label class="form-check-label" for="inlineRadioDefault2">
+                                Once or Twice
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault3" name="question23" type="radio" value="Monthly"/>
+                                <label class="form-check-label" for="inlineRadioDefault3">
+                                Monthly
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault4" name="question23" type="radio" value="Weekly"/>
+                                <label class="form-check-label" for="inlineRadioDefault4">
+                                Weekly
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault5" name="question23" type="radio" value="Daily or Almost Daily"/>
+                                <label class="form-check-label" for="inlineRadioDefault5">
+                                Daily or Almost Daily
+                                </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                20d. How many times in the past 12 months have you used tobacco products (like cigarettes, cigars, snuff, chew, electronic cigarettes)?
+                                </label>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault1" name="question24" type="radio" value="Never"/>
+                                <label class="form-check-label" for="inlineRadioDefault1">
+                                Never
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input checked="" class="form-check-input" id="inlineRadioDefault2" name="question24" type="radio" value="Once or Twice"/>
+                                <label class="form-check-label" for="inlineRadioDefault2">
+                                Once or Twice
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault3" name="question24" type="radio" value="Monthly"/>
+                                <label class="form-check-label" for="inlineRadioDefault3">
+                                Monthly
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault4" name="question24" type="radio" value="Weekly"/>
+                                <label class="form-check-label" for="inlineRadioDefault4">
+                                Weekly
+                                </label>
+                                </div>
+                                <div class="form-check form-check-reverse form-check-inline">
+                                <input class="form-check-input" id="inlineRadioDefault5" name="question24" type="radio" value="Daily or Almost Daily"/>
+                                <label class="form-check-label" for="inlineRadioDefault5">
+                                Daily or Almost Daily
+                                </label>
+                                </div>
+                            </div>
+                        </div>
+                    <button class="btn btn-primary" type="submit">
+                        Submit
+                    </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
